@@ -1,0 +1,79 @@
+export interface StudyProgram {
+    id: string;
+    name: string;
+    degree_type: 'Bachelor' | 'Master';
+    description?: string;
+    created_at: string;
+    updated_at: string;
+}
+
+export interface Module {
+    id: string;
+    study_program_id: string;
+    name: string;
+    module_code?: string;
+    ects: number;
+    description?: string;
+    professor?: string;
+    semester_type?: 'Winter' | 'Sommer' | 'Beide';
+    grade?: number;
+    created_at: string;
+    updated_at: string;
+}
+
+export interface SemesterPlan {
+    id: string;
+    study_program_id: string;
+    semester_number: number;
+    semester_type: 'Winter' | 'Sommer';
+    year: string;
+    created_at: string;
+}
+
+export interface SemesterModule {
+    id: string;
+    semester_plan_id: string;
+    module_id: string;
+    status: 'geplant' | 'laufend' | 'abgeschlossen' | 'durchgefallen';
+    created_at: string;
+}
+
+export interface ScheduleEntry {
+    id: string;
+    module_id: string;
+    semester_plan_id?: string;
+    day_of_week: number; // 0=Sonntag, 1=Montag, etc.
+    start_time: string; // "09:00"
+    end_time: string; // "10:30"
+    room?: string;
+    event_type: 'Vorlesung' | 'Seminar' | 'Übung';
+    created_at: string;
+}
+
+// Form Types
+export interface CreateStudyProgramData {
+    name: string;
+    degree_type: 'Bachelor' | 'Master';
+    description?: string;
+}
+  
+export interface CreateModuleData {
+    study_program_id: string;
+    name: string;
+    module_code?: string;
+    ects_points: number;
+    description?: string;
+    professor?: string;
+    semester_type: 'Winter' | 'Sommer' | 'Beide';
+    grade?: number;
+}
+  
+export interface CreateScheduleEntryData {
+    module_id: string;
+    day_of_week: number;
+    start_time: string;
+    end_time: string;
+    room?: string;
+    event_type: 'Vorlesung' | 'Seminar' | 'Übung';
+    is_recurring: boolean;
+}
