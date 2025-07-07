@@ -15,7 +15,7 @@ export interface Module {
     ects: number;
     description?: string;
     professor?: string;
-    semester_type?: 'Winter' | 'Sommer' | 'Beide';
+    semester_type?: 'winter' | 'sommer' | 'beide';
     grade?: number;
     created_at: string;
     updated_at: string;
@@ -25,7 +25,7 @@ export interface SemesterPlan {
     id: string;
     study_program_id: string;
     semester_number: number;
-    semester_type: 'Winter' | 'Sommer';
+    semester_type: 'winter' | 'sommer';
     year: string;
     created_at: string;
 }
@@ -34,7 +34,7 @@ export interface SemesterModule {
     id: string;
     semester_plan_id: string;
     module_id: string;
-    status: 'geplant' | 'laufend' | 'abgeschlossen' | 'durchgefallen';
+    status: 'geplant' | 'abgeschlossen';
     created_at: string;
 }
 
@@ -46,7 +46,7 @@ export interface ScheduleEntry {
     start_time: string; // "09:00"
     end_time: string; // "10:30"
     room?: string;
-    event_type: 'Vorlesung' | 'Seminar' | 'Übung';
+    event_type: 'vorlesung' | 'seminar' | 'uebung';
     created_at: string;
 }
 
@@ -64,7 +64,7 @@ export interface CreateModuleData {
     ects_points: number;
     description?: string;
     professor?: string;
-    semester_type: 'Winter' | 'Sommer' | 'Beide';
+    semester_type: 'winter' | 'sommer' | 'beide';
     grade?: number;
 }
   
@@ -74,6 +74,6 @@ export interface CreateScheduleEntryData {
     start_time: string;
     end_time: string;
     room?: string;
-    event_type: 'Vorlesung' | 'Seminar' | 'Übung';
+    event_type: 'vorlesung' | 'seminar' | 'uebung';
     is_recurring: boolean;
 }
