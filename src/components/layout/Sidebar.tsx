@@ -25,6 +25,7 @@ const navigation = [
     { name: 'Stundenplan', href: '/dashboard/schedule', icon: CalendarIcon },
     { name: 'Semesterplanung', href: '/dashboard/semester-planning', icon: ClipboardDocumentListIcon },
     { name: 'Statistiken', href: '/dashboard/stats', icon: ChartBarIcon },
+    { name: 'Dokumente', href: '/dashboard/files', icon: FolderIcon },
 ]
 
 

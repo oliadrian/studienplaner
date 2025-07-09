@@ -6,7 +6,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Lato', 'system-ui', 'sans-serif'],
+        'heading': ['var(--font-montserrat)', 'Lato', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
