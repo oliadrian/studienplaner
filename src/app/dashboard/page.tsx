@@ -38,11 +38,16 @@ function DashboardPage() {
 
   return ( 
       <main className='py-8 px-10 bg-gray-50 min-h-screen'>
+        
+        {/** HEADER */}
         <div className='mb-12'>
           <p className='text-4xl'>Willkommen zurück</p>
           <h1 className='pl-4 text-6xl font-heading font-bold'>Oliver Rust</h1>
         </div>
+
+        {/** DASHBOARD CONTAINER */}
         <div className='grid grid-cols-2 gap-4'>
+          
           <DashboardContainer title='Studienverlauf' subtitle='So sieht es derzeit bei Deinem Studium aus' icon='📈'>
             <div>
               <h1 className='font-bold font-heading'>Studienfach: Angewandte Informatik</h1>
@@ -60,6 +65,7 @@ function DashboardPage() {
               </div>
             </div>
           </DashboardContainer>
+          
           <DashboardContainer title='Termine' subtitle='Das hast Du heute vor' className='row-span-2' icon='📅'>
             <div>
             {zeitplan.map((item) => (
@@ -70,6 +76,7 @@ function DashboardPage() {
             ))}
             </div>
           </DashboardContainer>
+          
           <DashboardContainer title='TestContainer' subtitle='bla bla bla'>
             Test
           </DashboardContainer>
